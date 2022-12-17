@@ -28,6 +28,7 @@
 		5FE686ED294DB17300318A15 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE686EC294DB17300318A15 /* HomeView.swift */; };
 		5FE686F0294DB1DC00318A15 /* ViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE686EF294DB1DC00318A15 /* ViewProtocol.swift */; };
 		5FE686F4294DBD1F00318A15 /* ControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE686F3294DBD1F00318A15 /* ControllerProtocol.swift */; };
+		5FE686F6294DBE7A00318A15 /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE686F5294DBE7A00318A15 /* SplashController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		5FE686EC294DB17300318A15 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		5FE686EF294DB1DC00318A15 /* ViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProtocol.swift; sourceTree = "<group>"; };
 		5FE686F3294DBD1F00318A15 /* ControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerProtocol.swift; sourceTree = "<group>"; };
+		5FE686F5294DBE7A00318A15 /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +281,7 @@
 		5FE686F1294DBCB200318A15 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				5FE686F5294DBE7A00318A15 /* SplashController.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FE686F6294DBE7A00318A15 /* SplashController.swift in Sources */,
 				5FA4D086293FB349005D5501 /* HomeController.swift in Sources */,
 				5FE686F4294DBD1F00318A15 /* ControllerProtocol.swift in Sources */,
 				5FA4D0B0293FB384005D5501 /* AppContainer.swift in Sources */,
