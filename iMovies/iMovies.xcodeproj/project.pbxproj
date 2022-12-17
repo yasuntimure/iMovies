@@ -13,6 +13,8 @@
 		5F071772293FA18700A54133 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F071771293FA18700A54133 /* Assets.xcassets */; };
 		5F071775293FA18700A54133 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F071773293FA18700A54133 /* LaunchScreen.storyboard */; };
 		5F071780293FA18700A54133 /* iMoviesMVVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F07177F293FA18700A54133 /* iMoviesMVVMTests.swift */; };
+		5F5472CC293FD91900DA63BF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5F5472CB293FD91900DA63BF /* Alamofire */; };
+		5F5472D0293FD9F200DA63BF /* iMoviesAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 5F5472CF293FD9F200DA63BF /* iMoviesAPI */; };
 		5FA4D079293FB304005D5501 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F071760293F9F6E00A54133 /* AppRouter.swift */; };
 		5FA4D07A293FB304005D5501 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F07175E293F9F5300A54133 /* AppContainer.swift */; };
 		5FA4D082293FB349005D5501 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA4D081293FB349005D5501 /* AppDelegate.swift */; };
@@ -109,6 +111,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F5472D0293FD9F200DA63BF /* iMoviesAPI in Frameworks */,
+				5F5472CC293FD91900DA63BF /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +303,10 @@
 			dependencies = (
 			);
 			name = iMoviesMVC;
+			packageProductDependencies = (
+				5F5472CB293FD91900DA63BF /* Alamofire */,
+				5F5472CF293FD9F200DA63BF /* iMoviesAPI */,
+			);
 			productName = iMoviesMVC;
 			productReference = 5FA4D07F293FB349005D5501 /* iMoviesMVC.app */;
 			productType = "com.apple.product-type.application";
@@ -357,6 +365,10 @@
 				Base,
 			);
 			mainGroup = 5F69D2C5293CE36100768933;
+			packageReferences = (
+				5F5472CA293FD91900DA63BF /* XCRemoteSwiftPackageReference "Alamofire" */,
+				5F5472CE293FD9F200DA63BF /* XCRemoteSwiftPackageReference "iMoviesAPI" */,
+			);
 			productRefGroup = 5F69D2CF293CE36100768933 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -864,6 +876,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5F5472CA293FD91900DA63BF /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		5F5472CE293FD9F200DA63BF /* XCRemoteSwiftPackageReference "iMoviesAPI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yasuntimure/iMoviesAPI.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5F5472CB293FD91900DA63BF /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5F5472CA293FD91900DA63BF /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		5F5472CF293FD9F200DA63BF /* iMoviesAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5F5472CE293FD9F200DA63BF /* XCRemoteSwiftPackageReference "iMoviesAPI" */;
+			productName = iMoviesAPI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5F69D2C6293CE36100768933 /* Project object */;
 }

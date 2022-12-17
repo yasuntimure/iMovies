@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import iMoviesAlamofireAPI
+import iMoviesAPI
 
 let app = AppContainer()
 
