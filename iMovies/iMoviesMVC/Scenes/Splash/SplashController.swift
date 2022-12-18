@@ -12,8 +12,8 @@ final class SplashController: UIViewController {
 
     override func viewDidLoad() {
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-//            let homeController = HomeBuilder.make()
-//            show(homeController, sender: nil)
+            let homeController = HomeBuilder.make()
+            self.present(homeController.embedInNavigationController(), animated: false)
         }
     }
 
