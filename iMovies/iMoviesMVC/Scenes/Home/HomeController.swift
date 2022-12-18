@@ -7,12 +7,17 @@
 
 import UIKit
 import Combine
+import iMoviesAPI
 
 class HomeController: UIViewController, ControllerProtocol {
 
     private var subscribers = Set<AnyCancellable>()
 
     @Published internal var viewImpl: HomeView?
+
+    private var service: TopMoviesServiceProtocol?
+
+    private var movieList: [Movie] = []
 
     convenience init(view: HomeView?) {
         self.init(nibName: nil, bundle: nil)
@@ -34,6 +39,23 @@ class HomeController: UIViewController, ControllerProtocol {
             self?.view.addSubview(view)
         }.store(in: &subscribers)
 
+    }
+
+    func fetchTopMovies() {
+        service.fetchTopMovies { [weak self] result in
+
+            self.viewImpl?.isLoading = true
+
+            switch result {
+            case .success(let value):
+                let moviePresentations = value.results.map(MoviePresentation.init)
+                self.viewImpl?.viewModel = moviePresentations
+            case .failure(let error):
+                print(error)
+            }
+
+            self.viewImpl?.isLoading = false
+        }
     }
 
 }

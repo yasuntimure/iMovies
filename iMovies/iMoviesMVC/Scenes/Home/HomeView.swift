@@ -12,7 +12,8 @@ final class HomeView: UIView, ViewProtocol {
 
     private var subscribers = Set<AnyCancellable>()
 
-    @Published public var viewModel: String?
+    @Published public var viewModel: [MoviePresentation] = []
+    @Published public var isLoading: Bool?
 
     lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -22,22 +23,28 @@ final class HomeView: UIView, ViewProtocol {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureContents()
-
-        $viewModel.sink { model in
-            self.configureView(model)
-        }.store(in: &subscribers)
+        registerObservers()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-
     func setup() {
         addSubview(tableView)
     }
 
-    func configureView(_ viewModel: String?) { }
+    func configureView(_ viewModel: [MoviePresentation]?) { }
+
+    func registerObservers() {
+        $viewModel.sink { model in
+            self.configureView(model)
+        }.store(in: &subscribers)
+
+        $isLoading.sink { isLoading in
+            UIApplication.shared.isNetworkActivityIndicatorVisible = isLoading
+        }.store(in: &subscribers)
+    }
 
     func setConstraints() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -47,10 +54,29 @@ final class HomeView: UIView, ViewProtocol {
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor),
-
         ])
     }
 
+}
 
+
+// MARK: - UITableViewDelegate
+
+extension HomeView: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: <#T##String#>)
+    }
+
+}
+
+
+// MARK: - UITableViewDataSource
+
+extension HomeView: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.count
+    }
 
 }

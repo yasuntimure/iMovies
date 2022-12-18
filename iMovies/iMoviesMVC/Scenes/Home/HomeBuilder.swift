@@ -12,7 +12,7 @@ final class HomeBuilder {
     static func make() -> HomeController {
         let view = HomeView()
         let controller = HomeController(view: view)
-//        controller.service = app.service
+        controller.service = app.service
         return controller
     }
 }
