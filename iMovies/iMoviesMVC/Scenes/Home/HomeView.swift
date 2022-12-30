@@ -13,11 +13,12 @@ final class HomeView: UIView, ViewProtocol {
 
     private var subscribers = Set<AnyCancellable>()
 
-    @Published public var results: [Result] = []
+    @Published public var movies: [MoviePresentation] = []
     @Published public var isLoading: Bool = false
 
     lazy var tableView: UITableView = {
         let tableView = UITableView()
+        tableView.rowHeight = UITableView.automaticDimension
         return tableView
     }()
 
@@ -40,7 +41,7 @@ final class HomeView: UIView, ViewProtocol {
     }
 
     func registerObservers() {
-        $results
+        $movies
             .receive(on: DispatchQueue.main)
             .sink { _ in
             self.tableView.reloadData()
@@ -71,7 +72,7 @@ extension HomeView: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as HomeCell
-        cell.movie = results[indexPath.row]
+        cell.movie = movies[indexPath.row]
         return cell
     }
 
@@ -83,7 +84,7 @@ extension HomeView: UITableViewDelegate {
 extension HomeView: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return results.count
+        return movies.count
     }
 
 }

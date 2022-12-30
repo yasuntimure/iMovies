@@ -31,8 +31,16 @@ class HomeController: UIViewController, ControllerProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "iMovies"
-        searchReviews(for: "godfather")
+        searchReviews(for: "all")
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureNavigationBar(largeTitleColor: .white,
+                               backgoundColor: .systemBlue,
+                               tintColor: .white,
+                               title: "iMovies",
+                               preferredLargeTitle: true)
     }
 
     func registerObservers() {
@@ -48,11 +56,11 @@ class HomeController: UIViewController, ControllerProtocol {
 
     func searchReviews(for movie: String) {
         service?.search(movie: movie, completion: { [weak self] (response) in
-            if let response = response {
-                self?.viewImpl?.results = response
+            guard let response = response else {
+                return
             }
+            self?.viewImpl?.movies = response.map(MoviePresentation.init)
         })
     }
 
 }
-

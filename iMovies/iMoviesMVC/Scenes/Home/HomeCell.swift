@@ -8,19 +8,28 @@
 import Foundation
 import UIKit
 import Combine
+import Kingfisher
 import iMoviesAPI
 
 class HomeCell: UITableViewCell, ViewProtocol, Reuseable {
 
     private var subscribers = Set<AnyCancellable>()
 
-    @Published internal var movie: Result?
+    @Published internal var movie: MoviePresentation?
+
+    lazy var thumbImage: UIImageView = {
+        let view = UIImageView()
+        view.contentMode = .scaleAspectFill
+        view.layer.cornerRadius = 12
+        view.clipsToBounds = true
+        return view
+    }()
 
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
         label.font = ThemeManager.Font.Medium.font(size: .mediumlarge)
-        label.numberOfLines = 0
+        label.numberOfLines = 2
         return label
     }()
 
@@ -28,9 +37,7 @@ class HomeCell: UITableViewCell, ViewProtocol, Reuseable {
         let label = UILabel()
         label.textColor = .black
         label.font = ThemeManager.Font.Roman.font(size: .smallmedium)
-        label.numberOfLines = 0
-        label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.5
+        label.numberOfLines = 4
         return label
     }()
 
@@ -44,30 +51,55 @@ class HomeCell: UITableViewCell, ViewProtocol, Reuseable {
     }
 
     func setup() {
-        [titleLabel, detailLabel].forEach { contentView.addSubview($0) } 
+        [thumbImage, titleLabel, detailLabel].forEach { contentView.addSubview($0) }
     }
 
     func registerObservers() {
         $movie.sink { model in
-            self.titleLabel.text = model?.displayTitle
-            self.detailLabel.text = model?.mpaaRating
+            self.titleLabel.text = model?.title
+            self.detailLabel.text = model?.summary
+            self.thumbImage.setKfImage(for: model?.imageUrl)
         }.store(in: &subscribers)
     }
 
     func setConstraints() {
-        [contentView, titleLabel, detailLabel]
+        [contentView, thumbImage, titleLabel, detailLabel]
             .forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
 
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
+            contentView.topAnchor.constraint(equalTo: topAnchor),
+            contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: bottomAnchor),
+
+            thumbImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+            thumbImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 18),
+            thumbImage.heightAnchor.constraint(equalToConstant: 80),
+            thumbImage.widthAnchor.constraint(equalToConstant: 100),
+
+            titleLabel.topAnchor.constraint(equalTo: thumbImage.topAnchor),
+            titleLabel.leadingAnchor.constraint(equalTo: thumbImage.trailingAnchor, constant: 15),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
 
             detailLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
             detailLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            detailLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
-            detailLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
+            detailLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -18),
+            detailLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15)
         ])
+    }
+}
+
+
+// MARK: - Kingfiher
+extension UIImageView {
+
+    func setKfImage(for urlString: String?) {
+        guard let urlString = urlString else {
+            return
+        }
+        let url = URL(string: urlString)
+        self.kf.indicatorType = .activity
+        self.kf.setImage(with: url, options: KingfisherManager.shared.defaultOptions)
     }
 
 }

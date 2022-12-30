@@ -28,6 +28,7 @@
 		5F071775293FA18700A54133 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F071773293FA18700A54133 /* LaunchScreen.storyboard */; };
 		5F071780293FA18700A54133 /* iMoviesMVVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F07177F293FA18700A54133 /* iMoviesMVVMTests.swift */; };
 		5F23B3E5295F1767008090DD /* iMoviesAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 5F23B3E4295F1767008090DD /* iMoviesAPI */; };
+		5F23B3EA295F68A9008090DD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5F23B3E9295F68A9008090DD /* Kingfisher */; };
 		5FA4D079293FB304005D5501 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F071760293F9F6E00A54133 /* AppRouter.swift */; };
 		5FA4D07A293FB304005D5501 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F07175E293F9F5300A54133 /* AppContainer.swift */; };
 		5FA4D082293FB349005D5501 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA4D081293FB349005D5501 /* AppDelegate.swift */; };
@@ -142,6 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F23B3EA295F68A9008090DD /* Kingfisher in Frameworks */,
 				5F23B3E5295F1767008090DD /* iMoviesAPI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,7 +161,6 @@
 		5F002486294EFF0D00E2D56B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				5F002498294F332200E2D56B /* MoviePresentation.swift */,
 				5F002487294EFF2200E2D56B /* UIViewController+Extension.swift */,
 				5F0024B3294F395F00E2D56B /* UITableView+Extension.swift */,
 				5F0024B6294F397E00E2D56B /* UICollectionView+Extension.swift */,
@@ -197,6 +198,14 @@
 			path = iMoviesMVVMTests;
 			sourceTree = "<group>";
 		};
+		5F23B3EB295F6F0E008090DD /* Presentations */ = {
+			isa = PBXGroup;
+			children = (
+				5F002498294F332200E2D56B /* MoviePresentation.swift */,
+			);
+			path = Presentations;
+			sourceTree = "<group>";
+		};
 		5F69D2C5293CE36100768933 = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +239,7 @@
 		5FA4D080293FB349005D5501 /* iMoviesMVC */ = {
 			isa = PBXGroup;
 			children = (
+				5F23B3EB295F6F0E008090DD /* Presentations */,
 				5F0024AF294F38BD00E2D56B /* Utils */,
 				5F002486294EFF0D00E2D56B /* Extensions */,
 				5FA4D0BD293FB4BD005D5501 /* App */,
@@ -388,6 +398,7 @@
 			name = iMoviesMVC;
 			packageProductDependencies = (
 				5F23B3E4295F1767008090DD /* iMoviesAPI */,
+				5F23B3E9295F68A9008090DD /* Kingfisher */,
 			);
 			productName = iMoviesMVC;
 			productReference = 5FA4D07F293FB349005D5501 /* iMoviesMVC.app */;
@@ -449,6 +460,7 @@
 			mainGroup = 5F69D2C5293CE36100768933;
 			packageReferences = (
 				5F23B3E3295F1767008090DD /* XCRemoteSwiftPackageReference "iMoviesAPI" */,
+				5F23B3E8295F68A9008090DD /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 5F69D2CF293CE36100768933 /* Products */;
 			projectDirPath = "";
@@ -986,6 +998,14 @@
 				kind = branch;
 			};
 		};
+		5F23B3E8295F68A9008090DD /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -993,6 +1013,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5F23B3E3295F1767008090DD /* XCRemoteSwiftPackageReference "iMoviesAPI" */;
 			productName = iMoviesAPI;
+		};
+		5F23B3E9295F68A9008090DD /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5F23B3E8295F68A9008090DD /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
