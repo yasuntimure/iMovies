@@ -6,12 +6,12 @@
 //
 
 import Foundation
-import iMoviesAPI
+//import iMoviesAPI
 
 let app = AppContainer()
 
 final class AppContainer {
 
     let router = AppRouter()
-    let service = TopMoviesService()
+    let service = WebService()
 }

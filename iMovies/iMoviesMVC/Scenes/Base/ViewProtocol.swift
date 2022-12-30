@@ -11,11 +11,9 @@ import UIKit
 // MARK: Base View Protocol
 
 public protocol ViewProtocol: AnyObject {
-    associatedtype ViewModel
-    var viewModel: ViewModel? { get set }
     func setup()
     func setConstraints()
-    func configureView(_ viewModel: ViewModel?)
+    func registerObservers()
 }
 
 extension ViewProtocol where Self: UIView {
@@ -23,6 +21,7 @@ extension ViewProtocol where Self: UIView {
     /// Start initializing the base `AppView` protocol methods
     public func configureContents() {
         self.setup()
+        self.registerObservers()
         self.setConstraints()
     }
 

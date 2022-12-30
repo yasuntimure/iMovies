@@ -7,13 +7,14 @@
 
 import UIKit
 import Combine
+import iMoviesAPI
 
 final class HomeView: UIView, ViewProtocol {
 
     private var subscribers = Set<AnyCancellable>()
 
-    @Published public var viewModel: [MoviePresentation] = []
-    @Published public var isLoading: Bool?
+    @Published public var results: [Result] = []
+    @Published public var isLoading: Bool = false
 
     lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -31,18 +32,22 @@ final class HomeView: UIView, ViewProtocol {
     }
 
     func setup() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.registerCell(type: HomeCell.self)
+
         addSubview(tableView)
     }
 
-    func configureView(_ viewModel: [MoviePresentation]?) { }
-
     func registerObservers() {
-        $viewModel.sink { model in
-            self.configureView(model)
+        $results
+            .receive(on: DispatchQueue.main)
+            .sink { _ in
+            self.tableView.reloadData()
         }.store(in: &subscribers)
 
         $isLoading.sink { isLoading in
-            UIApplication.shared.isNetworkActivityIndicatorVisible = isLoading
+           //
         }.store(in: &subscribers)
     }
 
@@ -65,7 +70,9 @@ final class HomeView: UIView, ViewProtocol {
 extension HomeView: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: <#T##String#>)
+        let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as HomeCell
+        cell.movie = results[indexPath.row]
+        return cell
     }
 
 }
@@ -76,7 +83,7 @@ extension HomeView: UITableViewDelegate {
 extension HomeView: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.count
+        return results.count
     }
 
 }

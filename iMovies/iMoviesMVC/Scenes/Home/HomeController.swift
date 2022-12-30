@@ -15,24 +15,29 @@ class HomeController: UIViewController, ControllerProtocol {
 
     @Published internal var viewImpl: HomeView?
 
-    private var service: TopMoviesServiceProtocol?
+    var service: WebServiceProtocol?
 
-    private var movieList: [Movie] = []
+    private var movieList: SearchReponseModel?
 
-    convenience init(view: HomeView?) {
+    convenience init(
+        view: HomeView?,
+        service: WebServiceProtocol?
+    ) {
         self.init(nibName: nil, bundle: nil)
         self.viewImpl = view
+        self.service = service
         self.configureController()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "iMovies"
+        searchReviews(for: "godfather")
     }
 
     func registerObservers() {
-        $viewImpl.sink { [weak self] view in
-            guard let view = view else { return }
+        $viewImpl.sink { [weak self] _view in
+            guard let view = _view else { return }
             view.frame = UIScreen.main.bounds
             // TODO: view implementation
             view.backgroundColor = .systemPink
@@ -41,21 +46,12 @@ class HomeController: UIViewController, ControllerProtocol {
 
     }
 
-    func fetchTopMovies() {
-        service.fetchTopMovies { [weak self] result in
-
-            self.viewImpl?.isLoading = true
-
-            switch result {
-            case .success(let value):
-                let moviePresentations = value.results.map(MoviePresentation.init)
-                self.viewImpl?.viewModel = moviePresentations
-            case .failure(let error):
-                print(error)
+    func searchReviews(for movie: String) {
+        service?.search(movie: movie, completion: { [weak self] (response) in
+            if let response = response {
+                self?.viewImpl?.results = response
             }
-
-            self.viewImpl?.isLoading = false
-        }
+        })
     }
 
 }

@@ -10,17 +10,17 @@ import UIKit
 
 final class MoviePresentation: NSObject {
     
-    let title: String
-    let detail: String
+    let displayTitle: String?
+    let mpaaRating: String?
     
-    init(title: String, detail: String) {
-        self.title = title
-        self.detail = detail
+    init(displayTitle: String?, mpaaRating: String?) {
+        self.displayTitle = displayTitle
+        self.mpaaRating = mpaaRating
         super.init()
     }
     
     override func isEqual(_ object: Any?) -> Bool {
         guard let other = object as? MoviePresentation else { return false }
-        return self.title == other.title && self.detail == other.detail
+        return self.displayTitle == other.displayTitle && self.mpaaRating == other.mpaaRating
     }
 }
