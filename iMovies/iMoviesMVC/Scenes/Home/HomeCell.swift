@@ -27,15 +27,14 @@ class HomeCell: UITableViewCell, ViewProtocol, Reuseable {
 
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .black
         label.font = ThemeManager.Font.Medium.font(size: .mediumlarge)
         label.numberOfLines = 2
+
         return label
     }()
 
     lazy var detailLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .black
         label.font = ThemeManager.Font.Roman.font(size: .smallmedium)
         label.numberOfLines = 4
         return label
