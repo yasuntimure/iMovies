@@ -36,19 +36,19 @@ class HomeController: UIViewController, ControllerProtocol {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        configureNavigationBar(largeTitleColor: .white,
-                               backgoundColor: .systemBlue,
-                               tintColor: .white,
-                               title: "iMovies",
-                               preferredLargeTitle: true)
+        title = "iMovies"
     }
 
     func registerObservers() {
         $viewImpl.sink { [weak self] _view in
             guard let view = _view else { return }
             view.frame = UIScreen.main.bounds
-            // TODO: view implementation
-            view.backgroundColor = .systemPink
+
+            view.onCellSelect = { movie in
+                let controller = DetailBuilder.make(movie: movie)
+                self?.navigationController?.pushViewController(controller, animated: true)
+            }
+            
             self?.view.addSubview(view)
         }.store(in: &subscribers)
 

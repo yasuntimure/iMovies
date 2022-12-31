@@ -11,6 +11,8 @@ import iMoviesAPI
 
 final class HomeView: UIView, ViewProtocol {
 
+    var onCellSelect: ((_ movie: MoviePresentation) -> Void)?
+
     private var subscribers = Set<AnyCancellable>()
 
     @Published public var movies: [MoviePresentation] = []
@@ -33,6 +35,7 @@ final class HomeView: UIView, ViewProtocol {
     }
 
     func setup() {
+        self.backgroundColor = .systemBackground
         tableView.delegate = self
         tableView.dataSource = self
         tableView.registerCell(type: HomeCell.self)
@@ -74,6 +77,10 @@ extension HomeView: UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as HomeCell
         cell.movie = movies[indexPath.row]
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.onCellSelect?(movies[indexPath.row])
     }
 
 }

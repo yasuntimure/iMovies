@@ -29,6 +29,9 @@
 		5F071780293FA18700A54133 /* iMoviesMVVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F07177F293FA18700A54133 /* iMoviesMVVMTests.swift */; };
 		5F23B3E5295F1767008090DD /* iMoviesAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 5F23B3E4295F1767008090DD /* iMoviesAPI */; };
 		5F23B3EA295F68A9008090DD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5F23B3E9295F68A9008090DD /* Kingfisher */; };
+		5F23B3EE295F7689008090DD /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F23B3ED295F7689008090DD /* DetailView.swift */; };
+		5F23B3F0295F7B38008090DD /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F23B3EF295F7B38008090DD /* DetailController.swift */; };
+		5F23B3F429600471008090DD /* DetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F23B3F329600471008090DD /* DetailBuilder.swift */; };
 		5FA4D079293FB304005D5501 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F071760293F9F6E00A54133 /* AppRouter.swift */; };
 		5FA4D07A293FB304005D5501 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F07175E293F9F5300A54133 /* AppContainer.swift */; };
 		5FA4D082293FB349005D5501 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA4D081293FB349005D5501 /* AppDelegate.swift */; };
@@ -106,6 +109,9 @@
 		5F071776293FA18700A54133 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F07177B293FA18700A54133 /* iMoviesMVVMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iMoviesMVVMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F07177F293FA18700A54133 /* iMoviesMVVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iMoviesMVVMTests.swift; sourceTree = "<group>"; };
+		5F23B3ED295F7689008090DD /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		5F23B3EF295F7B38008090DD /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
+		5F23B3F329600471008090DD /* DetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBuilder.swift; sourceTree = "<group>"; };
 		5FA4D07F293FB349005D5501 /* iMoviesMVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMoviesMVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FA4D081293FB349005D5501 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FA4D085293FB349005D5501 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -206,6 +212,16 @@
 			path = Presentations;
 			sourceTree = "<group>";
 		};
+		5F23B3EC295F766E008090DD /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				5F23B3ED295F7689008090DD /* DetailView.swift */,
+				5F23B3F329600471008090DD /* DetailBuilder.swift */,
+				5F23B3EF295F7B38008090DD /* DetailController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		5F69D2C5293CE36100768933 = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +292,7 @@
 				5FE686EE294DB1C900318A15 /* Base */,
 				5FE686F1294DBCB200318A15 /* Splash */,
 				5FE686EB294DB16200318A15 /* Home */,
+				5F23B3EC295F766E008090DD /* Detail */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -542,11 +559,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FE686F6294DBE7A00318A15 /* SplashController.swift in Sources */,
+				5F23B3EE295F7689008090DD /* DetailView.swift in Sources */,
 				5FA4D086293FB349005D5501 /* HomeController.swift in Sources */,
 				5F002488294EFF2200E2D56B /* UIViewController+Extension.swift in Sources */,
 				5FE686F4294DBD1F00318A15 /* ControllerProtocol.swift in Sources */,
 				5F0024AD294F386000E2D56B /* HomeCell.swift in Sources */,
 				5F0024B4294F395F00E2D56B /* UITableView+Extension.swift in Sources */,
+				5F23B3F0295F7B38008090DD /* DetailController.swift in Sources */,
 				5FA4D0B0293FB384005D5501 /* AppContainer.swift in Sources */,
 				5FE686F0294DB1DC00318A15 /* ViewProtocol.swift in Sources */,
 				5F0024B1294F38CE00E2D56B /* Reuseable.swift in Sources */,
@@ -555,6 +574,7 @@
 				5F0024B7294F397E00E2D56B /* UICollectionView+Extension.swift in Sources */,
 				5FE686F8294DC07900318A15 /* HomeBuilder.swift in Sources */,
 				5FE686ED294DB17300318A15 /* HomeView.swift in Sources */,
+				5F23B3F429600471008090DD /* DetailBuilder.swift in Sources */,
 				5F002485294DC32900E2D56B /* SplashBuilder.swift in Sources */,
 				5F0024A8294F332200E2D56B /* MoviePresentation.swift in Sources */,
 				5FA4D0B2293FB398005D5501 /* AppRouter.swift in Sources */,

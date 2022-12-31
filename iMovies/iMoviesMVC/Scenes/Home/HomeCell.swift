@@ -28,7 +28,7 @@ class HomeCell: UITableViewCell, ViewProtocol, Reuseable {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = ThemeManager.Font.Medium.font(size: .mediumlarge)
-        label.numberOfLines = 2
+        label.numberOfLines = 1
 
         return label
     }()
@@ -36,7 +36,7 @@ class HomeCell: UITableViewCell, ViewProtocol, Reuseable {
     lazy var detailLabel: UILabel = {
         let label = UILabel()
         label.font = ThemeManager.Font.Roman.font(size: .smallmedium)
-        label.numberOfLines = 4
+        label.numberOfLines = 3
         return label
     }()
 
@@ -73,7 +73,7 @@ class HomeCell: UITableViewCell, ViewProtocol, Reuseable {
 
             thumbImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
             thumbImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 18),
-            thumbImage.heightAnchor.constraint(equalToConstant: 80),
+            thumbImage.heightAnchor.constraint(equalToConstant: 85),
             thumbImage.widthAnchor.constraint(equalToConstant: 100),
 
             titleLabel.topAnchor.constraint(equalTo: thumbImage.topAnchor),
