@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-final class HomeView: UIView, ViewProtocol {
+final class HomeView: UIView, BaseAppView {
 
     var onCellSelect: ((_ movie: MoviePresentation) -> Void)?
 

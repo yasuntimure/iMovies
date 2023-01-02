@@ -9,7 +9,7 @@ import UIKit
 import Combine
 import iMoviesAPI
 
-class DetailController: UIViewController, ControllerProtocol {
+class DetailController: UIViewController, BaseAppController {
 
     private var subscribers = Set<AnyCancellable>()
 

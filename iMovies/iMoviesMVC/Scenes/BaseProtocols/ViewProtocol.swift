@@ -8,17 +8,17 @@
 import Combine
 import UIKit
 
-// MARK: Base View Protocol
+// MARK: Base App View Protocol
 
-public protocol ViewProtocol: AnyObject {
+public protocol BaseAppView: AnyObject {
     func setup()
     func setConstraints()
     func registerObservers()
 }
 
-extension ViewProtocol where Self: UIView {
+extension BaseAppView where Self: UIView {
 
-    /// Start initializing the base `AppView` protocol methods
+    /// Start initializing the base `BaseAppView` protocol methods
     public func configureContents() {
         self.setup()
         self.registerObservers()

@@ -9,7 +9,7 @@ import UIKit
 import Combine
 import iMoviesAPI
 
-final class DetailView: UIView, ViewProtocol, UIScrollViewDelegate {
+final class DetailView: UIView, BaseAppView, UIScrollViewDelegate {
 
     private var subscribers = Set<AnyCancellable>()
 
@@ -69,7 +69,7 @@ final class DetailView: UIView, ViewProtocol, UIScrollViewDelegate {
 }
 
 
-final class HeaderView: UIView, ViewProtocol {
+final class HeaderView: UIView, BaseAppView {
 
     private var subscribers = Set<AnyCancellable>()
 
@@ -132,7 +132,7 @@ final class HeaderView: UIView, ViewProtocol {
 
 }
 
-final class BodyView: UIView, ViewProtocol {
+final class BodyView: UIView, BaseAppView {
 
     private var subscribers = Set<AnyCancellable>()
 

@@ -11,7 +11,7 @@ import Combine
 import Kingfisher
 import iMoviesAPI
 
-class HomeCell: UITableViewCell, ViewProtocol, Reuseable {
+class HomeCell: UITableViewCell, BaseAppView, Reuseable {
 
     private var subscribers = Set<AnyCancellable>()
 
