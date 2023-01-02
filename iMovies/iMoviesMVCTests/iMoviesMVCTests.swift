@@ -6,30 +6,49 @@
 //
 
 import XCTest
+@testable import iMoviesAPI
+@testable import iMoviesMVC
 
 class iMoviesMVCTests: XCTestCase {
 
+    fileprivate var service: MockService!
+    var view: HomeView!
+    var controller: HomeController!
+
+
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        service = MockService()
+        view = HomeView()
+        controller = HomeController()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        service = nil
+        view = nil
+        controller = nil
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
+    func testMovieList() throws {
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+        // Given
+        let movie1 = try ResourceLoader.loadMovie(resource: .movie1)
+        service.movies = [movie1]
 
+        // When
+        controller.loadViewIfNeeded()
+
+        // Then
+        XCTAssertEqual(view.movies.count, 1)
+        XCTAssertEqual(try view.movies.element(at: 0).title, movie1.displayTitle)
+    }
 }
+
+private final class MockService: WebServiceProtocol {
+
+    var movies: [Movie] = []
+
+    func search(movie: String, completion: @escaping ([Movie]?) -> Void) {
+        completion(movies)
+    }
+}
+

@@ -1,8 +1,8 @@
 //
 //  HomeView.swift
-//  iMoviesMVC
+//  iMoviesMVVM
 //
-//  Created by Eyüp Yasuntimur on 17.12.2022.
+//  Created by Eyüp Yasuntimur on 2.01.2023.
 //
 
 import UIKit
@@ -14,7 +14,7 @@ final class HomeView: UIView, ViewProtocol {
 
     private var subscribers = Set<AnyCancellable>()
 
-    @Published public var movies: [MoviePresentation] = []
+    @Published public var viewModel: [MoviePresentation] = []
     @Published public var isLoading: Bool = false
 
     lazy var tableView: UITableView = {
@@ -94,3 +94,4 @@ extension HomeView: UITableViewDataSource {
     }
 
 }
+
