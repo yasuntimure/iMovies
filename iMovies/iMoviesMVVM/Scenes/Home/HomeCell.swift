@@ -1,8 +1,8 @@
 //
-//  HomeTableViewCell.swift
-//  iMovies
+//  HomeCell.swift
+//  iMoviesMVVM
 //
-//  Created by Eyüp Yasuntimur on 18.12.2022.
+//  Created by Eyüp Yasuntimur on 2.01.2023.
 //
 
 import Foundation
@@ -11,11 +11,11 @@ import Combine
 import Kingfisher
 import iMoviesAPI
 
-class HomeCell: UITableViewCell, BaseAppView, Reuseable {
+class HomeCell: UITableViewCell, ViewProtocol, Reuseable {
 
     private var subscribers = Set<AnyCancellable>()
 
-    @Published internal var movie: MoviePresentation?
+    @Published internal var viewModel: MoviePresentation?
 
     lazy var thumbImage: UIImageView = {
         let view = UIImageView()
@@ -54,11 +54,15 @@ class HomeCell: UITableViewCell, BaseAppView, Reuseable {
     }
 
     func registerObservers() {
-        $movie.sink { model in
-            self.titleLabel.text = model?.title
-            self.detailLabel.text = model?.summary
-            self.thumbImage.setKfImage(for: model?.imageUrl)
+        $viewModel.sink { model in
+            self.configureView(model)
         }.store(in: &subscribers)
+    }
+
+    func configureView(_ viewModel: MoviePresentation?) {
+        self.titleLabel.text = viewModel?.title
+        self.detailLabel.text = viewModel?.summary
+        self.thumbImage.setKfImage(for: viewModel?.imageUrl)
     }
 
     func setConstraints() {
@@ -87,3 +91,5 @@ class HomeCell: UITableViewCell, BaseAppView, Reuseable {
         ])
     }
 }
+
+

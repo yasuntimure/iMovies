@@ -14,7 +14,9 @@ final class HomeView: UIView, ViewProtocol {
 
     private var subscribers = Set<AnyCancellable>()
 
-    @Published public var viewModel: [MoviePresentation] = []
+    var viewModel: String?
+
+    @Published public var movies: MoviePresentations = []
     @Published public var isLoading: Bool = false
 
     lazy var tableView: UITableView = {
@@ -44,6 +46,7 @@ final class HomeView: UIView, ViewProtocol {
 
     func registerObservers() {
         $movies
+            .dropFirst()
             .receive(on: DispatchQueue.main)
             .sink { _ in
             self.tableView.reloadData()
@@ -53,6 +56,8 @@ final class HomeView: UIView, ViewProtocol {
            //
         }.store(in: &subscribers)
     }
+
+    func configureView(_ viewModel: String?) { }
 
     func setConstraints() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -74,7 +79,7 @@ extension HomeView: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as HomeCell
-        cell.movie = movies[indexPath.row]
+        cell.viewModel = movies[indexPath.row]
         return cell
     }
 

@@ -14,7 +14,7 @@ final class HomeView: UIView, BaseAppView {
 
     private var subscribers = Set<AnyCancellable>()
 
-    @Published public var movies: [MoviePresentation] = []
+    @Published public var movies: MoviePresentations = []
     @Published public var isLoading: Bool = false
 
     lazy var tableView: UITableView = {
@@ -44,6 +44,7 @@ final class HomeView: UIView, BaseAppView {
 
     func registerObservers() {
         $movies
+            .dropFirst()
             .receive(on: DispatchQueue.main)
             .sink { _ in
             self.tableView.reloadData()

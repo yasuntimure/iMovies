@@ -9,6 +9,8 @@
 import UIKit
 import iMoviesAPI
 
+typealias MoviePresentations = [MoviePresentation]
+
 final class MoviePresentation: NSObject {
     
     let title: String?

@@ -5,10 +5,11 @@
 //  Created by Eyüp Yasuntimur on 2.01.2023.
 //
 
+import Foundation
 import UIKit
 
 public protocol ControllerProtocol {
-    associatedtype ViewType: BaseAppView
+    associatedtype ViewType: ViewProtocol
     var viewImpl: ViewType? { get set }
     func registerObservers()
     func configureController()

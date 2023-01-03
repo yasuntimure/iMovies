@@ -11,7 +11,8 @@ final class HomeBuilder {
 
     static func make() -> HomeController {
         let view = HomeView()
-        let controller = HomeController(view: view, service: app.service)
+        let controller = HomeController(view: view,
+                                        service: app.service)
         return controller
     }
 }
