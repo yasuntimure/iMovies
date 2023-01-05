@@ -59,6 +59,24 @@
 		5F23B41229631519008090DD /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F23B41129631519008090DD /* HomeController.swift */; };
 		5F23B41429631523008090DD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F23B41329631523008090DD /* HomeViewModel.swift */; };
 		5F23B4162963152C008090DD /* HomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F23B4152963152C008090DD /* HomeBuilder.swift */; };
+		5F9292972967001400B2CBC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9292962967001400B2CBC8 /* AppDelegate.swift */; };
+		5F92929B2967001400B2CBC8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F92929A2967001400B2CBC8 /* ViewController.swift */; };
+		5F92929E2967001400B2CBC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F92929C2967001400B2CBC8 /* Main.storyboard */; };
+		5F9292A02967001500B2CBC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F92929F2967001500B2CBC8 /* Assets.xcassets */; };
+		5F9292A32967001500B2CBC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F9292A12967001500B2CBC8 /* LaunchScreen.storyboard */; };
+		5F9292AE2967001500B2CBC8 /* iMoviesVIPERTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9292AD2967001500B2CBC8 /* iMoviesVIPERTests.swift */; };
+		5F9292C42967004A00B2CBC8 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F002487294EFF2200E2D56B /* UIViewController+Extension.swift */; };
+		5F9292C52967004D00B2CBC8 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F168BC929632A4F0073BE71 /* UIImageView+Extension.swift */; };
+		5F9292C62967004F00B2CBC8 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F23B3FD29619886008090DD /* Array+Extension.swift */; };
+		5F9292C72967005200B2CBC8 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0024B3294F395F00E2D56B /* UITableView+Extension.swift */; };
+		5F9292C82967005400B2CBC8 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0024B6294F397E00E2D56B /* UICollectionView+Extension.swift */; };
+		5F9292C92967005800B2CBC8 /* Optional+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F23B3FB29619821008090DD /* Optional+Extension.swift */; };
+		5F9292CA2967005800B2CBC8 /* Optional+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F23B3FB29619821008090DD /* Optional+Extension.swift */; };
+		5F9292CB2967006C00B2CBC8 /* MoviePresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F002498294F332200E2D56B /* MoviePresentation.swift */; };
+		5F9292CE296700BD00B2CBC8 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9292CD296700BD00B2CBC8 /* AppContainer.swift */; };
+		5F9292D0296700D000B2CBC8 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9292CF296700D000B2CBC8 /* AppRouter.swift */; };
+		5F9292D12967014A00B2CBC8 /* Reuseable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0024B0294F38CE00E2D56B /* Reuseable.swift */; };
+		5F9292D22967015000B2CBC8 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0024B9294F3A3100E2D56B /* ThemeManager.swift */; };
 		5FA4D079293FB304005D5501 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F071760293F9F6E00A54133 /* AppRouter.swift */; };
 		5FA4D07A293FB304005D5501 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F07175E293F9F5300A54133 /* AppContainer.swift */; };
 		5FA4D082293FB349005D5501 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA4D081293FB349005D5501 /* AppDelegate.swift */; };
@@ -83,6 +101,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 5F071765293FA18600A54133;
 			remoteInfo = iMoviesMVVM;
+		};
+		5F9292AA2967001500B2CBC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F69D2C6293CE36100768933 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5F9292932967001400B2CBC8;
+			remoteInfo = iMoviesVIPER;
 		};
 		5FA4D095293FB34A005D5501 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -158,6 +183,17 @@
 		5F23B41129631519008090DD /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		5F23B41329631523008090DD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		5F23B4152963152C008090DD /* HomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBuilder.swift; sourceTree = "<group>"; };
+		5F9292942967001400B2CBC8 /* iMoviesVIPER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMoviesVIPER.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F9292962967001400B2CBC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5F92929A2967001400B2CBC8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5F92929D2967001400B2CBC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5F92929F2967001500B2CBC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5F9292A22967001500B2CBC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5F9292A42967001500B2CBC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F9292A92967001500B2CBC8 /* iMoviesVIPERTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iMoviesVIPERTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F9292AD2967001500B2CBC8 /* iMoviesVIPERTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iMoviesVIPERTests.swift; sourceTree = "<group>"; };
+		5F9292CD296700BD00B2CBC8 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
+		5F9292CF296700D000B2CBC8 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		5FA4D07F293FB349005D5501 /* iMoviesMVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMoviesMVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FA4D081293FB349005D5501 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FA4D085293FB349005D5501 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -187,6 +223,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5F071778293FA18700A54133 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F9292912967001400B2CBC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F9292A62967001500B2CBC8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -343,6 +393,8 @@
 				5FA4D097293FB34A005D5501 /* iMoviesMVCTests */,
 				5F071767293FA18600A54133 /* iMoviesMVVM */,
 				5F07177E293FA18700A54133 /* iMoviesMVVMTests */,
+				5F9292952967001400B2CBC8 /* iMoviesVIPER */,
+				5F9292AC2967001500B2CBC8 /* iMoviesVIPERTests */,
 				5F69D2CF293CE36100768933 /* Products */,
 				5F69D304293DAE9000768933 /* Frameworks */,
 			);
@@ -355,6 +407,8 @@
 				5F07177B293FA18700A54133 /* iMoviesMVVMTests.xctest */,
 				5FA4D07F293FB349005D5501 /* iMoviesMVC.app */,
 				5FA4D094293FB34A005D5501 /* iMoviesMVCTests.xctest */,
+				5F9292942967001400B2CBC8 /* iMoviesVIPER.app */,
+				5F9292A92967001500B2CBC8 /* iMoviesVIPERTests.xctest */,
 			);
 			name = Products;
 			sourceTree = SOURCE_ROOT;
@@ -364,6 +418,37 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5F9292952967001400B2CBC8 /* iMoviesVIPER */ = {
+			isa = PBXGroup;
+			children = (
+				5F9292CC2967008A00B2CBC8 /* App */,
+				5F92929A2967001400B2CBC8 /* ViewController.swift */,
+				5F92929C2967001400B2CBC8 /* Main.storyboard */,
+				5F92929F2967001500B2CBC8 /* Assets.xcassets */,
+				5F9292A12967001500B2CBC8 /* LaunchScreen.storyboard */,
+				5F9292A42967001500B2CBC8 /* Info.plist */,
+			);
+			path = iMoviesVIPER;
+			sourceTree = "<group>";
+		};
+		5F9292AC2967001500B2CBC8 /* iMoviesVIPERTests */ = {
+			isa = PBXGroup;
+			children = (
+				5F9292AD2967001500B2CBC8 /* iMoviesVIPERTests.swift */,
+			);
+			path = iMoviesVIPERTests;
+			sourceTree = "<group>";
+		};
+		5F9292CC2967008A00B2CBC8 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5F9292962967001400B2CBC8 /* AppDelegate.swift */,
+				5F9292CD296700BD00B2CBC8 /* AppContainer.swift */,
+				5F9292CF296700D000B2CBC8 /* AppRouter.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 		5FA4D080293FB349005D5501 /* iMoviesMVC */ = {
@@ -518,6 +603,41 @@
 			productReference = 5F07177B293FA18700A54133 /* iMoviesMVVMTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		5F9292932967001400B2CBC8 /* iMoviesVIPER */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F9292BB2967001500B2CBC8 /* Build configuration list for PBXNativeTarget "iMoviesVIPER" */;
+			buildPhases = (
+				5F9292902967001400B2CBC8 /* Sources */,
+				5F9292912967001400B2CBC8 /* Frameworks */,
+				5F9292922967001400B2CBC8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iMoviesVIPER;
+			productName = iMoviesVIPER;
+			productReference = 5F9292942967001400B2CBC8 /* iMoviesVIPER.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5F9292A82967001500B2CBC8 /* iMoviesVIPERTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F9292BE2967001500B2CBC8 /* Build configuration list for PBXNativeTarget "iMoviesVIPERTests" */;
+			buildPhases = (
+				5F9292A52967001500B2CBC8 /* Sources */,
+				5F9292A62967001500B2CBC8 /* Frameworks */,
+				5F9292A72967001500B2CBC8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5F9292AB2967001500B2CBC8 /* PBXTargetDependency */,
+			);
+			name = iMoviesVIPERTests;
+			productName = iMoviesVIPERTests;
+			productReference = 5F9292A92967001500B2CBC8 /* iMoviesVIPERTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		5FA4D07E293FB349005D5501 /* iMoviesMVC */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5FA4D0A6293FB34B005D5501 /* Build configuration list for PBXNativeTarget "iMoviesMVC" */;
@@ -575,6 +695,13 @@
 						CreatedOnToolsVersion = 13.4.1;
 						TestTargetID = 5F071765293FA18600A54133;
 					};
+					5F9292932967001400B2CBC8 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					5F9292A82967001500B2CBC8 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 5F9292932967001400B2CBC8;
+					};
 					5FA4D07E293FB349005D5501 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
@@ -608,6 +735,8 @@
 				5FA4D093293FB34A005D5501 /* iMoviesMVCTests */,
 				5F071765293FA18600A54133 /* iMoviesMVVM */,
 				5F07177A293FA18700A54133 /* iMoviesMVVMTests */,
+				5F9292932967001400B2CBC8 /* iMoviesVIPER */,
+				5F9292A82967001500B2CBC8 /* iMoviesVIPERTests */,
 			);
 		};
 /* End PBXProject section */
@@ -624,6 +753,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5F071779293FA18700A54133 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F9292922967001400B2CBC8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F9292A32967001500B2CBC8 /* LaunchScreen.storyboard in Resources */,
+				5F9292A02967001500B2CBC8 /* Assets.xcassets in Resources */,
+				5F92929E2967001400B2CBC8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F9292A72967001500B2CBC8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -676,6 +822,7 @@
 				5F168BC6296329270073BE71 /* ControllerProtocol.swift in Sources */,
 				5F23B41029631510008090DD /* HomeView.swift in Sources */,
 				5F23B4162963152C008090DD /* HomeBuilder.swift in Sources */,
+				5F9292C92967005800B2CBC8 /* Optional+Extension.swift in Sources */,
 				5F071769293FA18600A54133 /* AppDelegate.swift in Sources */,
 				5F0024B5294F395F00E2D56B /* UITableView+Extension.swift in Sources */,
 			);
@@ -686,6 +833,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F071780293FA18700A54133 /* iMoviesMVVMTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F9292902967001400B2CBC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F9292CB2967006C00B2CBC8 /* MoviePresentation.swift in Sources */,
+				5F9292C82967005400B2CBC8 /* UICollectionView+Extension.swift in Sources */,
+				5F9292C52967004D00B2CBC8 /* UIImageView+Extension.swift in Sources */,
+				5F9292C42967004A00B2CBC8 /* UIViewController+Extension.swift in Sources */,
+				5F9292C72967005200B2CBC8 /* UITableView+Extension.swift in Sources */,
+				5F9292CA2967005800B2CBC8 /* Optional+Extension.swift in Sources */,
+				5F9292D22967015000B2CBC8 /* ThemeManager.swift in Sources */,
+				5F9292D12967014A00B2CBC8 /* Reuseable.swift in Sources */,
+				5F92929B2967001400B2CBC8 /* ViewController.swift in Sources */,
+				5F9292D0296700D000B2CBC8 /* AppRouter.swift in Sources */,
+				5F9292CE296700BD00B2CBC8 /* AppContainer.swift in Sources */,
+				5F9292C62967004F00B2CBC8 /* Array+Extension.swift in Sources */,
+				5F9292972967001400B2CBC8 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F9292A52967001500B2CBC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F9292AE2967001500B2CBC8 /* iMoviesVIPERTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -743,6 +918,11 @@
 			target = 5F071765293FA18600A54133 /* iMoviesMVVM */;
 			targetProxy = 5F07177C293FA18700A54133 /* PBXContainerItemProxy */;
 		};
+		5F9292AB2967001500B2CBC8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5F9292932967001400B2CBC8 /* iMoviesVIPER */;
+			targetProxy = 5F9292AA2967001500B2CBC8 /* PBXContainerItemProxy */;
+		};
 		5FA4D096293FB34A005D5501 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5FA4D07E293FB349005D5501 /* iMoviesMVC */;
@@ -763,6 +943,22 @@
 			isa = PBXVariantGroup;
 			children = (
 				5F071774293FA18700A54133 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5F92929C2967001400B2CBC8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F92929D2967001400B2CBC8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5F9292A12967001500B2CBC8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F9292A22967001500B2CBC8 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -996,6 +1192,102 @@
 			};
 			name = Release;
 		};
+		5F9292BC2967001500B2CBC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JGMV95L4F7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iMoviesVIPER/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eyupyasuntimur.iMoviesVIPER;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5F9292BD2967001500B2CBC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JGMV95L4F7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iMoviesVIPER/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eyupyasuntimur.iMoviesVIPER;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5F9292BF2967001500B2CBC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JGMV95L4F7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eyupyasuntimur.iMoviesVIPERTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iMoviesVIPER.app/iMoviesVIPER";
+			};
+			name = Debug;
+		};
+		5F9292C02967001500B2CBC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JGMV95L4F7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eyupyasuntimur.iMoviesVIPERTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iMoviesVIPER.app/iMoviesVIPER";
+			};
+			name = Release;
+		};
 		5FA4D0A7293FB34B005D5501 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1131,6 +1423,24 @@
 			buildConfigurations = (
 				5F69D2F6293CE36200768933 /* Debug */,
 				5F69D2F7293CE36200768933 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5F9292BB2967001500B2CBC8 /* Build configuration list for PBXNativeTarget "iMoviesVIPER" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F9292BC2967001500B2CBC8 /* Debug */,
+				5F9292BD2967001500B2CBC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5F9292BE2967001500B2CBC8 /* Build configuration list for PBXNativeTarget "iMoviesVIPERTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F9292BF2967001500B2CBC8 /* Debug */,
+				5F9292C02967001500B2CBC8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
