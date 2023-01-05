@@ -42,7 +42,9 @@ final class DetailView: UIView, ViewProtocol {
     }
 
     func registerObservers() {
-        $viewModel.sink { model in
+        $viewModel
+            .dropFirst()
+            .sink { model in
             self.configureView(model)
         }.store(in: &subscribers)
     }
@@ -109,7 +111,9 @@ final class HeaderView: UIView, ViewProtocol {
     }
 
     func registerObservers() {
-        $viewModel.sink { model in
+        $viewModel
+            .dropFirst()
+            .sink { model in
             self.configureView(model)
         }.store(in: &subscribers)
     }
@@ -167,7 +171,9 @@ final class BodyView: UIView, ViewProtocol {
     }
 
     func registerObservers() {
-        $viewModel.sink { model in
+        $viewModel
+            .dropFirst()
+            .sink { model in
             self.configureView(model)
         }.store(in: &subscribers)
     }

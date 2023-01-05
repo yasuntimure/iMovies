@@ -3,17 +3,3 @@
 <plist version="1.0">
 <dict/>
 </plist>
-
-<key>NSAppTransportSecurity</key>
-<dict>
-    <key>NSExceptionDomains</key>
-    <dict>
-        <key>https://api.nytimes.com</key>
-        <dict>
-            <key>NSExceptionRequiresForwardSecrecy</key>
-            <false/>
-            <key>NSIncludesSubdomains</key>
-            <true/>
-        </dict>
-    </dict>
-</dict>
