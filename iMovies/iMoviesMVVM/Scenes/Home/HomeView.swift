@@ -69,7 +69,6 @@ final class HomeView: UIView, ViewProtocol {
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
-
 }
 
 
@@ -86,7 +85,6 @@ extension HomeView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.onCellSelect?(movies[indexPath.row])
     }
-
 }
 
 

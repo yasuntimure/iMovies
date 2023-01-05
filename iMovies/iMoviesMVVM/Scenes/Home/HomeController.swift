@@ -51,8 +51,5 @@ class HomeController: UIViewController, ControllerProtocol {
         viewModel?.$movies.sink{ [weak self] (movies) in
             self?.viewImpl?.movies = movies
         }.store(in: &subscribers)
-
     }
-
 }
-

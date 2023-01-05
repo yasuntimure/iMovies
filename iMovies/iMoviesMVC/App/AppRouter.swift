@@ -16,7 +16,7 @@ final class AppRouter {
     }
 
     func start() {
-        window.rootViewController = SplashBuilder.make()
+        window.rootViewController = HomeBuilder.make()
         window.makeKeyAndVisible()
     }
 }

@@ -12,12 +12,12 @@ final class AppRouter {
     let window: UIWindow
 
     init() {
-        window = UIWindow(frame: UIScreen.main.bounds)
+        window = UIWindow(frame: UIScreen.main.nativeBounds)
     }
 
     func start() {
-        let viewController = SplashController()
-        let navigationController = UINavigationController(rootViewController: viewController)
+        let homeController = HomeBuilder.make()
+        let navigationController = homeController.embedInNavigationController()
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
     }
