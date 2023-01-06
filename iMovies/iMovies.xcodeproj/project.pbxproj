@@ -367,10 +367,10 @@
 		5F23B40E29631501008090DD /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				5F23B4152963152C008090DD /* HomeBuilder.swift */,
 				5F23B40F29631510008090DD /* HomeView.swift */,
 				5F23B41129631519008090DD /* HomeController.swift */,
 				5F23B41329631523008090DD /* HomeViewModel.swift */,
-				5F23B4152963152C008090DD /* HomeBuilder.swift */,
 				5F168BC7296329900073BE71 /* HomeCell.swift */,
 			);
 			path = Home;
