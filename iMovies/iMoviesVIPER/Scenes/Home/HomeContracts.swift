@@ -6,12 +6,14 @@
 //
 
 import Foundation
-import struct iMoviesAPI.Movie
+import iMoviesAPI
 
 // MARK: - Interactor
 
 protocol HomeInteractorProtocol: AnyObject {
     var delegate: HomeInteractorDelegate? { get set }
+    var service: WebServiceProtocol { get set }
+    var movies: [Movie] { get set }
     func searchReviews()
     func selectMovie(at index: Int)
 }
@@ -29,6 +31,9 @@ enum HomeInteractorOutput {
 // MARK: - Presenter
 
 protocol HomePresenterProtocol: AnyObject {
+    var view: HomeViewProtocol { get set }
+    var router: HomeRouterProtocol { get set }
+    var interactor: HomeInteractorProtocol { get set }
     func load()
     func selectMovie(at index: Int)
 }
@@ -42,6 +47,8 @@ enum HomePresenterOutput {
 // MARK: - View
 
 protocol HomeViewProtocol: AnyObject {
+    var movies: MoviePresentations { get set }
+    var presenter: HomePresenterProtocol? { get set }
     func handleOutput(_ output: HomePresenterOutput)
 }
 

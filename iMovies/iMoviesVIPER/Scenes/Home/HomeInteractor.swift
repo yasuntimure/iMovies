@@ -11,8 +11,9 @@ final class HomeInteractor: HomeInteractorProtocol {
 
     var delegate: HomeInteractorDelegate?
 
-    private let service: WebServiceProtocol
-    private var movies: [Movie] = []
+    internal var movies: [Movie] = []
+
+    internal var service: WebServiceProtocol
 
     init(service: WebServiceProtocol) {
         self.service = service

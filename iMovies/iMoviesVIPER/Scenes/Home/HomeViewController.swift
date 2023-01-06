@@ -11,7 +11,7 @@ final class HomeViewController: UIViewController, HomeViewProtocol {
 
     internal var presenter: HomePresenterProtocol?
 
-    private var movies: MoviePresentations = []
+    internal var movies: MoviePresentations = []
 
     lazy var tableView: UITableView = {
         let tableView = UITableView()

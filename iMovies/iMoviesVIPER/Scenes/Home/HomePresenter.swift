@@ -9,9 +9,9 @@ import Foundation
 
 final class HomePresenter: HomePresenterProtocol {
 
-    private unowned let view: HomeViewProtocol
-    private let interactor: HomeInteractorProtocol
-    private let router: HomeRouterProtocol
+    internal var view: HomeViewProtocol
+    internal var router: HomeRouterProtocol
+    internal var interactor: HomeInteractorProtocol
 
     init(view: HomeViewProtocol,
          interactor: HomeInteractorProtocol,
