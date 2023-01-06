@@ -12,7 +12,7 @@ final class AppRouter {
     let window: UIWindow
 
     init() {
-        window = UIWindow(frame: UIScreen.main.nativeBounds)
+        window = UIWindow(frame: UIScreen.main.bounds)
     }
 
     func start() {
