@@ -16,10 +16,8 @@ final class AppRouter {
     }
 
     func start() {
-        let viewController = UIViewController()
-        let navigationController = UINavigationController(rootViewController: viewController)
-        navigationController.title = "Replace Me"
-        navigationController.view.backgroundColor = .green
+        let homeController = HomeBuilder.make()
+        let navigationController = homeController.embedInNavigationController()
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
     }

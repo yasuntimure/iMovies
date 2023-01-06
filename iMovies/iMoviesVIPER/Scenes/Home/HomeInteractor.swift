@@ -7,23 +7,30 @@
 
 import iMoviesAPI
 
-final class HomeInteractor {
+final class HomeInteractor: HomeInteractorProtocol {
 
-    @Published internal var movies: [Movie] = []
+    var delegate: HomeInteractorDelegate?
 
     private let service: WebServiceProtocol
+    private var movies: [Movie] = []
 
     init(service: WebServiceProtocol) {
         self.service = service
     }
 
-    func searchReviews(for movie: String) {
-        service?.search(movie: movie, completion: { [weak self] (response) in
+    func searchReviews() {
+        service.search(movie: "all", completion: { [weak self] (response) in
             guard let response = response else {
                 return
             }
-            self?.movies = response.map(MoviePresentation.init)
+            self?.movies = response
+            self?.delegate?.handleOutput(.showMovies(response))
         })
     }
 
+    func selectMovie(at index: Int) {
+        let movie = movies[index]
+        let moviePresentation = MoviePresentation(movie: movie)
+        self.delegate?.handleOutput(.showMovieDetail(moviePresentation))
+    }
 }
