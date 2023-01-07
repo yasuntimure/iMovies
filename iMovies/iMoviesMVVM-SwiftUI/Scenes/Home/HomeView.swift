@@ -11,7 +11,7 @@ import iMoviesAPI
 
 struct HomeView: View {
 
-    @State var title: String = "iMovies"
+    @State var title: String = "Movies"
 
     @ObservedObject internal var viewModel: HomeViewModel
 
@@ -20,15 +20,16 @@ struct HomeView: View {
         NavigationView {
             HomeTableView(movies: viewModel.movies)
                 .toolbar {
-                ToolbarItem(placement: .principal) {
+                    ToolbarItem(placement: .principal) {
                     Text(title).font(.headline)
                 }
             }
         }
-
     }
-
 }
+
+
+// MARK: - HomeTableView
 
 struct HomeTableView: View {
 
@@ -37,10 +38,15 @@ struct HomeTableView: View {
     var body: some View {
         List(movies, id: \.self) {
             HomeCellView(movie: $0)
+                .padding([.top, .bottom], 10)
         }
+            .listStyle(PlainListStyle())
+            .padding(.top, -50)
     }
 }
 
+
+// MARK: - HomeCellView
 
 struct HomeCellView: View {
 
@@ -50,22 +56,22 @@ struct HomeCellView: View {
         HStack {
             KFImage(movie?.imageUrl?.getURL())
                 .resizable()
-                .frame(width: 100, height: 100, alignment: .center)
-                .aspectRatio(contentMode: .fill)
+                .scaledToFill()
+                .frame(width: 100, height: 85, alignment: .center)
                 .cornerRadius(12)
-                .padding(.trailing)
 
             VStack (alignment: .leading) {
                 Text(movie?.title ?? "")
                     .font(AppFont.Medium.font(size: .mediumlarge))
+                    .lineLimit(1)
                 Text(movie?.summary ?? "")
                     .font(AppFont.Medium.font(size: .smallmedium))
+                    .lineLimit(3)
             }
         }
-            .padding()
     }
-
 }
+
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {

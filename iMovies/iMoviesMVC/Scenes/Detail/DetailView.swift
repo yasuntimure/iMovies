@@ -7,7 +7,6 @@
 
 import UIKit
 import Combine
-import iMoviesAPI
 
 final class DetailView: UIView, BaseAppView, UIScrollViewDelegate {
 
