@@ -11,7 +11,7 @@ import SwiftUI
 struct iMoviesMVVM_SwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView(viewModel: HomeViewModel(service: app.service))
+            HomeBuilder.make()
         }
     }
 }

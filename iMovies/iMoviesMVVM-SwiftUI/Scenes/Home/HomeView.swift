@@ -19,12 +19,9 @@ struct HomeView: View {
 
         NavigationView {
             HomeTableView(movies: viewModel.movies)
-                .toolbar {
-                    ToolbarItem(placement: .principal) {
-                    Text(title).font(.headline)
-                }
-            }
+                .navigationBarTitle(Text(title), displayMode: .inline)
         }
+            
     }
 }
 
@@ -33,15 +30,18 @@ struct HomeView: View {
 
 struct HomeTableView: View {
 
+    @State var isSelected: Bool = false
+
     var movies: [MoviePresentation] = []
 
     var body: some View {
-        List(movies, id: \.self) {
-            HomeCellView(movie: $0)
-                .padding([.top, .bottom], 10)
-        }
-            .listStyle(PlainListStyle())
-            .padding(.top, -50)
+            List(movies, id: \.self) { movie in
+                NavigationLink(destination: DetailView(movie: movie)) {
+                    HomeCellView(movie: movie)
+                        .padding([.top, .bottom], 10)
+                }
+            }
+                .listStyle(PlainListStyle())
     }
 }
 
@@ -53,14 +53,14 @@ struct HomeCellView: View {
     @State var movie: MoviePresentation?
 
     var body: some View {
-        HStack {
+        HStack (spacing: 15) {
             KFImage(movie?.imageUrl?.getURL())
                 .resizable()
                 .scaledToFill()
                 .frame(width: 100, height: 85, alignment: .center)
                 .cornerRadius(12)
 
-            VStack (alignment: .leading) {
+            VStack (alignment: .leading, spacing: 3) {
                 Text(movie?.title ?? "")
                     .font(AppFont.Medium.font(size: .mediumlarge))
                     .lineLimit(1)
@@ -85,8 +85,3 @@ extension String {
         return URL(string: self)
     }
 }
-
-
-
-
-

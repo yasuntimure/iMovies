@@ -112,6 +112,11 @@
 		5FEF7EFF296961B100B98F93 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEF7EFE296961B100B98F93 /* AppContainer.swift */; };
 		5FEF7F01296961B700B98F93 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEF7F00296961B700B98F93 /* AppRouter.swift */; };
 		5FEF7F0A2969B1EC00B98F93 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0024B9294F3A3100E2D56B /* ThemeManager.swift */; };
+		5FEF7F0C2969D17300B98F93 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEF7F0B2969D17300B98F93 /* DetailView.swift */; };
+		5FEF7F0E2969DF9600B98F93 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEF7F0D2969DF9600B98F93 /* Screen.swift */; };
+		5FEF7F0F2969E03800B98F93 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEF7F0D2969DF9600B98F93 /* Screen.swift */; };
+		5FEF7F102969E03A00B98F93 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEF7F0D2969DF9600B98F93 /* Screen.swift */; };
+		5FEF7F112969E03C00B98F93 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEF7F0D2969DF9600B98F93 /* Screen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -250,6 +255,8 @@
 		5FE686F7294DC07900318A15 /* HomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBuilder.swift; sourceTree = "<group>"; };
 		5FEF7EFE296961B100B98F93 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
 		5FEF7F00296961B700B98F93 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		5FEF7F0B2969D17300B98F93 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		5FEF7F0D2969DF9600B98F93 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,6 +345,7 @@
 			children = (
 				5F0024B0294F38CE00E2D56B /* Reuseable.swift */,
 				5F0024B9294F3A3100E2D56B /* ThemeManager.swift */,
+				5FEF7F0D2969DF9600B98F93 /* Screen.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -474,6 +482,7 @@
 		5F4D7FAA29689F56007180AA /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				5FEF7F0B2969D17300B98F93 /* DetailView.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -1043,6 +1052,7 @@
 				5F9292C92967005800B2CBC8 /* Optional+Extension.swift in Sources */,
 				5F071769293FA18600A54133 /* AppDelegate.swift in Sources */,
 				5F0024B5294F395F00E2D56B /* UITableView+Extension.swift in Sources */,
+				5FEF7F102969E03A00B98F93 /* Screen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1059,7 +1069,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F4D7FBD2968A90A007180AA /* HomeContracts.swift in Sources */,
+				5FEF7F0C2969D17300B98F93 /* DetailView.swift in Sources */,
 				5F4D7FB12968A211007180AA /* MoviePresentation.swift in Sources */,
+				5FEF7F0E2969DF9600B98F93 /* Screen.swift in Sources */,
 				5F4D7FAE2968A1FC007180AA /* Array+Extension.swift in Sources */,
 				5F4D7FB92968A8F0007180AA /* HomeViewModel.swift in Sources */,
 				5F4D7FAF2968A203007180AA /* Optional+Extension.swift in Sources */,
@@ -1107,6 +1119,7 @@
 				5F9292CE296700BD00B2CBC8 /* AppContainer.swift in Sources */,
 				5F9292C62967004F00B2CBC8 /* Array+Extension.swift in Sources */,
 				5F9292972967001400B2CBC8 /* AppDelegate.swift in Sources */,
+				5FEF7F112969E03C00B98F93 /* Screen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1142,6 +1155,7 @@
 				5F0024B7294F397E00E2D56B /* UICollectionView+Extension.swift in Sources */,
 				5F168BD729632EB80073BE71 /* DetailController.swift in Sources */,
 				5FE686F8294DC07900318A15 /* HomeBuilder.swift in Sources */,
+				5FEF7F0F2969E03800B98F93 /* Screen.swift in Sources */,
 				5FE686ED294DB17300318A15 /* HomeView.swift in Sources */,
 				5F23B3F429600471008090DD /* DetailBuilder.swift in Sources */,
 				5F0024A8294F332200E2D56B /* MoviePresentation.swift in Sources */,
