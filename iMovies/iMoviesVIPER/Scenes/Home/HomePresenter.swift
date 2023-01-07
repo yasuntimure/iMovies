@@ -43,7 +43,7 @@ extension HomePresenter: HomeInteractorDelegate {
     func handleOutput(_ output: HomeInteractorOutput) {
         switch output {
         case .showMovies(let movies):
-            let moviePresentations = movies.map(MoviePresentation.init)
+            let moviePresentations = movies.map({ $0.map() })
             view.handleOutput(.showMovies(moviePresentations))
         case .showMovieDetail(let movie):
             router.navigate(to: .detail(movie))

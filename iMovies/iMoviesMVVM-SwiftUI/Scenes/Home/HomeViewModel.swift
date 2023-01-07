@@ -1,16 +1,14 @@
 //
 //  HomeViewModel.swift
-//  iMoviesMVVM
+//  iMoviesMVVM-SwiftUI
 //
-//  Created by Eyüp Yasuntimur on 2.01.2023.
+//  Created by Eyüp Yasuntimur on 6.01.2023.
 //
 
-import Combine
+import SwiftUI
 import iMoviesAPI
 
-final class HomeViewModel {
-
-    private var subscribers = Set<AnyCancellable>()
+final class HomeViewModel: ObservableObject {
 
     @Published var movies: MoviePresentations = []
 
@@ -18,6 +16,7 @@ final class HomeViewModel {
 
     init(service: WebServiceProtocol?) {
         self.service = service
+        searchReviews(for: "all")
     }
 
     func searchReviews(for movie: String) {
@@ -25,7 +24,10 @@ final class HomeViewModel {
             guard let response = response else {
                 return
             }
-            self?.movies = response.map({ $0.map() })
+            DispatchQueue.main.async {
+                self?.movies = response.map({ $0.map() })
+            }
         })
     }
 }
+

@@ -27,7 +27,7 @@ class HomeCell: UITableViewCell, ViewProtocol, Reuseable {
 
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = ThemeManager.Font.Medium.font(size: .mediumlarge)
+        label.font = AppFont.Medium.font(size: .mediumlarge)
         label.numberOfLines = 1
 
         return label
@@ -35,7 +35,7 @@ class HomeCell: UITableViewCell, ViewProtocol, Reuseable {
 
     lazy var detailLabel: UILabel = {
         let label = UILabel()
-        label.font = ThemeManager.Font.Roman.font(size: .smallmedium)
+        label.font = AppFont.Roman.font(size: .smallmedium)
         label.numberOfLines = 3
         return label
     }()

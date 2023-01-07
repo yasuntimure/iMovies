@@ -31,7 +31,7 @@ final class HomeInteractor: HomeInteractorProtocol {
 
     func selectMovie(at index: Int) {
         let movie = movies[index]
-        let moviePresentation = MoviePresentation(movie: movie)
+        let moviePresentation = movie.map()
         self.delegate?.handleOutput(.showMovieDetail(moviePresentation))
     }
 }

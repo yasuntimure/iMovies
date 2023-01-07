@@ -79,7 +79,7 @@ final class HeaderView: UIView {
 
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = ThemeManager.Font.Black.font(size: .xlarge)
+        label.font = AppFont.Black.font(size: .xlarge)
         label.textColor = .white
         label.numberOfLines = 0
         return label
@@ -131,7 +131,7 @@ final class BodyView: UIView {
 
     lazy var summaryLabel: UILabel = {
         let label = UILabel()
-        label.font = ThemeManager.Font.Book.font(size: .medium)
+        label.font = AppFont.Book.font(size: .medium)
         label.numberOfLines = 0
         return label
     }()

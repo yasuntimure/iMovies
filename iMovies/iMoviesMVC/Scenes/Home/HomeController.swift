@@ -59,7 +59,7 @@ class HomeController: UIViewController, BaseAppController {
             guard let response = response else {
                 return
             }
-            self?.viewImpl?.movies = response.map(MoviePresentation.init)
+            self?.viewImpl?.movies = response.map({ $0.map() })
         })
     }
 
