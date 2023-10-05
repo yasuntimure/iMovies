@@ -27,7 +27,7 @@ class HomeController: UIViewController, ControllerProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel?.searchReviews(for: "all")
+        viewModel?.fetchMovies()
     }
 
     override func viewWillAppear(_ animated: Bool) {

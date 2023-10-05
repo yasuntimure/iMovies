@@ -17,11 +17,10 @@ struct MoviePresentation: Hashable {
     let imageUrl: String?
 }
 
-
 extension Movie {
     func map() -> MoviePresentation {
-        return MoviePresentation(title: self.displayTitle,
-                                 summary: self.summaryShort,
-                                 imageUrl: self.multimedia?.src)
+        return MoviePresentation(title: self.title,
+                                 summary: self.overview,
+                                 imageUrl: self.backdropPath)
     }
 }

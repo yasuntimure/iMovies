@@ -20,12 +20,18 @@ final class HomeViewModel {
         self.service = service
     }
 
-    func searchReviews(for movie: String) {
-        service?.search(movie: movie, completion: { [weak self] (response) in
-            guard let response = response else {
-                return
+    func fetchMovies() {
+        let networking = Networking()
+        let endpoint = MovieEndpoint.upcoming
+        Task {
+            do {
+                let response: UpcomingReponseModel = try await networking.request(endpoint)
+                if let results = response.results {
+                    self.movies = results.map({ $0.map() })
+                }
+            } catch {
+                print("An error occurred: \(error)")
             }
-            self?.movies = response.map({ $0.map() })
-        })
+        }
     }
 }
